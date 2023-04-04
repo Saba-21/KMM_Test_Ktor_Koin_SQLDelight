@@ -1,0 +1,19 @@
+CREATE TABLE IF NOT EXISTS repositoryEntity(
+    id INTEGER NOT NULL PRIMARY KEY,
+    title TEXT NOT NULL
+);
+
+getAllRepositories:
+SELECT *
+FROM repositoryEntity;
+
+insertRepository:
+INSERT OR REPLACE
+INTO repositoryEntity(
+    id,
+    title
+) VALUES (?,?);
+
+deleteRepository:
+DELETE FROM repositoryEntity
+WHERE id = ?;
